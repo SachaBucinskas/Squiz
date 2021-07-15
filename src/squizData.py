@@ -5,10 +5,15 @@
 import json
 import os.path
 
-testFile = []
+def getQuestions(quizFile):
+    with open(os.path.join('data','quizes',quizFile+'.json'),'r') as tempFile:
+        questionsData = json.load(tempFile)["questions"]
+        tempFile.close()
+    return(questionsData)
 
-with open(os.path.join('data','quizes','template.json'),'r') as testFile:
-    questions = json.load(testFile)
-    testFile.close()
 
-print(questions)
+questionData = getQuestions("template") 
+for i in questionData:
+    print(i["question"])
+    print(i["responses"])
+    print(i["answer"])
