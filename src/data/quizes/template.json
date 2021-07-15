@@ -1,12 +1,14 @@
 {
-    {
+    "questions":[
+        { 
         "question":"Example question text. Was this helpful?",
         "responses": ["No","No","No","Yes"],
         "answer": 3
-    },
-    {
+        },
+        {
         "question":"You having a good time?",
         "responses": ["This is the best!","How is this helpful?","This is terrible!","Not really"],
         "answer": 0
-    },
+        }
+    ]
 }
