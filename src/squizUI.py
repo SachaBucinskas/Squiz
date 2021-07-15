@@ -32,6 +32,7 @@ def spQuiz(questionsArg):
     questionNumber = 0 # For tracking which question currently on
     totalQuestions = len(questionsArg) # The total number of questions in the quiz
     score = 0
+    totalCorrect = 0
 
      # Save terminal width and height so the formatting is correct & adjustable
 
@@ -50,13 +51,43 @@ def spQuiz(questionsArg):
 
         responseNumber = 0
         longestResponse = 0
+        
+        points = 1000
         for response in questionData["responses"]: # Get length of longest response for formatting
             if len(response) > longestResponse: longestResponse = len(response) 
         for response in questionData["responses"]:
             print(("[" + controls[responseNumber]+ "] " + response.center(longestResponse)).center(terminalWidth()))
             responseNumber += 1
-        score += squizScoring.checkAnswer(getch.getch(), questionData["answer"])
+        while True:
+            userInput = getch.getch()
+            wasResponseCorrect = squizScoring.checkAnswer(userInput, questionData["answer"])        
+            if wasResponseCorrect == "invalid": 
+                print('"' + userInput + '" is not a valid answer.')
+                continue
+            elif wasResponseCorrect:
+                totalCorrect += 1
+                printTopLine()
+                printMiddleLine("☆ Correct! ☆")
+                printMiddleLine("Score: " + str(score) + " + " + str(points))
+                score += points
+                printMiddleLine("")
+                printMiddleLine("Press any key to Continue")
+                printBotLine()
+                getch.getch()
+                break
+            else:
+                printTopLine()
+                printMiddleLine("↓ Wrong! Bad Luck! ↓")
+                printMiddleLine("Score: ")
+                printMiddleLine("")
+                printMiddleLine("Press any key to Continue")
+                printBotLine()
+                getch.getch()
+                break
 
-    print()
+
+    printTopLine()
+    printMiddleLine("Total Questions: " + str(totalQuestions))
+    printMiddleLine("Correct Answers: " + str(totalCorrect))
 
 spQuiz(squizData.getQuestions("template"))
