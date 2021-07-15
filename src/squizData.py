@@ -7,7 +7,6 @@ import os.path
 import os
 
 def getQuestions(quizFile):
-    print(os.getcwd())
     try: 
         with open(os.path.join("data","quizes",quizFile+".json"),"r") as tempFile:
             questionsData = json.load(tempFile)["questions"]
