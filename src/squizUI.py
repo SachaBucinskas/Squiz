@@ -4,12 +4,15 @@
 import getch
 import os
 import squizData
+import squizScoring
+
+controls = ["Q","W","E","R"]
 
 def terminalWidth():
     width, height = os.get_terminal_size(0)
     return(width)
 
-def quiz(questionsArg):
+def spQuiz(questionsArg):
     questionNumber = 0 # For tracking which question currently on
     totalQuestions = len(questionsArg) # The total number of questions in the quiz
     score = 0
@@ -24,9 +27,13 @@ def quiz(questionsArg):
         print("\n")
         print(questionData["question"])
         print("=" * terminalWidth())
+        responseNumber = 0
+        longestResponse = 0
         for response in questionData["responses"]:
-            print((response).center(terminalWidth()))
+            if len(response) > longestResponse: longestResponse = len(response) 
+        for response in questionData["responses"]:
+            print(("[" + controls[responseNumber]+ "] " + response.center(longestResponse)).center(terminalWidth()))
+            responseNumber += 1
+        score += squizScoring.checkAnswer(getch.getch(), questionData["answer"])
 
-
-
-quiz(squizData.getQuestions("template"))
+spQuiz(squizData.getQuestions("template"))
