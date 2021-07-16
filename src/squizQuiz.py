@@ -40,7 +40,7 @@ def spQuiz(questionsArg):
 
         # Gets user input/choice of the responses
         while True: # Loops until a valid input is given, different result for correct or wrong answer
-            userInput = getch.getch()
+            userInput = getChar()
             wasResponseCorrect = squizScoring.checkAnswer(userInput, questionData["answer"])        
             if wasResponseCorrect == "invalid": # Tell user which key we think they hit & tell them it's not accepted
                 print('"' + userInput + '" is not a valid answer.')
@@ -54,7 +54,7 @@ def spQuiz(questionsArg):
                 printMiddleLine("")
                 printMiddleLine("Press any key to Continue")
                 printBotLine()
-                getch.getch()
+                getChar()
                 break
             else: # Wrong answer
                 printTopLine()
@@ -63,7 +63,7 @@ def spQuiz(questionsArg):
                 printMiddleLine("")
                 printMiddleLine("Press any key to Continue")
                 printBotLine()
-                getch.getch()
+                getChar()
                 break
 
     # End Summary Screen
@@ -73,6 +73,8 @@ def spQuiz(questionsArg):
     printMiddleLine("Total Questions: " + str(totalQuestions))
     printMiddleLine("Correct Answers: " + str(totalCorrect))
     printMiddleLine('Accuracy ' + str(accuracy) + "%")
+    print("╞" + ("═" * terminalWidth()) + "╡")
+    printMiddleLine("Press Any Key to Continue")
     printBotLine()
+    getChar()
 
-spQuiz(squizData.getQuestions("template"))
