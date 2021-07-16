@@ -53,15 +53,19 @@ def spQuiz(questionsArg):
         longestResponse = 0
         
         points = 1000
+
+        # Displays the responses
         for response in questionData["responses"]: # Get length of longest response for formatting
             if len(response) > longestResponse: longestResponse = len(response) 
-        for response in questionData["responses"]:
-            print(("[" + controls[responseNumber]+ "] " + response.center(longestResponse)).center(terminalWidth()))
+        for response in questionData["responses"]: # Prints all the text with the the controls displayed in line with eachother
+            print(("[" + controls[responseNumber]+ "] " + response.center(longestResponse)).center(terminalWidth())) 
             responseNumber += 1
-        while True:
+
+        # Gets user input/choice of the responses
+        while True: # Loops until a valid input is given, different result for correct or wrong answer
             userInput = getch.getch()
             wasResponseCorrect = squizScoring.checkAnswer(userInput, questionData["answer"])        
-            if wasResponseCorrect == "invalid": 
+            if wasResponseCorrect == "invalid": # Tell user which key we think they hit & tell them it's not accepted
                 print('"' + userInput + '" is not a valid answer.')
                 continue
             elif wasResponseCorrect:
@@ -78,16 +82,20 @@ def spQuiz(questionsArg):
             else:
                 printTopLine()
                 printMiddleLine("↓ Wrong! Bad Luck! ↓")
-                printMiddleLine("Score: ")
+                printMiddleLine("Score: " + str(score))
                 printMiddleLine("")
                 printMiddleLine("Press any key to Continue")
                 printBotLine()
                 getch.getch()
                 break
 
-
+    # End Summary Screen
+    clearScreen()
+    accuracy = round(float(totalCorrect) / float(totalQuestions) * 100, 2)
     printTopLine()
     printMiddleLine("Total Questions: " + str(totalQuestions))
     printMiddleLine("Correct Answers: " + str(totalCorrect))
+    printMiddleLine('Accuracy ' + str(accuracy) + "%")
+    printBotLine()
 
 spQuiz(squizData.getQuestions("template"))

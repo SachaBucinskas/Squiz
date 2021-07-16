@@ -41,3 +41,7 @@ Started implementing the squizData module & json, as it's very foundational to a
 Began testing & implementing the json & data, ran into issues with my JSON file not using proper syntax which I only found when testing the data module. Added some error handling for missing files.
 !["missing File Test"](/img/squizDataMissingFile.png)
 !["Kanban 4"](./img/Kanban(4).png)
+
+Finished implementing the basic template for quizes & reading them into a list variable using the squizData module. Time to work on the basics of displaying questions
+
+!["Kanban 5"](./img/Kanban(5).png)
