@@ -1,5 +1,5 @@
 # Name:    squizUI.py
-# Purpose: This is responsible for displaying user interfaces & receiving user input
+# Purpose: This holds a lot of commonly used display & input methods in Squiz
  
 import getch
 import os

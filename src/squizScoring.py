@@ -2,17 +2,48 @@
 # Purpose: This is responsible for checking if it's the correct answer, as well as scoring
  
 def checkAnswer(chosen, correct):
-    if chosen.lower() in "1qQ":
+    if chosen.upper() in "Q":
         if "0" in correct: return(True)
         else: return(False)
-    elif chosen.lower() in "2wW":
+    elif chosen.upper() in "W":
         if "1" in correct: return(True)
         else: return(False)
-    elif chosen.lower() in "3eE":
+    elif chosen.upper() in "E":
         if "2" in correct: return(True)
         else: return(False)
-    elif chosen in "4rR":
+    elif chosen.upper() in "R":
         if "3" in correct: return(True)
         else: return(False)
+    else:
+        return("invalid")
+
+def checkAnswerMP(chosen, correct):
+    # Player One Controls
+    if chosen.upper() in "Q":
+        if "0" in correct: return(1,True)
+        else: return(1, False)
+    elif chosen.upper() in "W":
+        if "1" in correct: return(1,True)
+        else: return(1, False)
+    elif chosen.upper() in "E":
+        if "2" in correct: return(1,True)
+        else: return(1, False)
+    elif chosen.upper() in "R":
+        if "3" in correct: return(1, True)
+        else: return(1, False)
+    
+    # Player Two Controls
+    if chosen.upper() in "U":
+        if "0" in correct: return(2,True)
+        else: return(2, False)
+    elif chosen.upper() in "I":
+        if "1" in correct: return(2,True)
+        else: return(2, False)
+    elif chosen.upper() in "O":
+        if "2" in correct: return(2,True)
+        else: return(2, False)
+    elif chosen.upper() in "P":
+        if "3" in correct: return(2, True)
+        else: return(2, False)    
     else:
         return("invalid")

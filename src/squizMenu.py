@@ -1,10 +1,9 @@
-# Name:    squizUI.py
+# Name:    squizMenu.py
 # Purpose: This is responsible for displaying user interfaces & receiving user input
 
 from squizUI import clearScreen, printBotLine, printMiddleLine, printTopLine, terminalHeight, terminalWidth, getChar
 
-def menu(topText, items): # Designed to take a list of options & return the index of the option chosen
-
+def mainMenu(items): # Designed to take a list of options & return the index of the option chosen
     choice = 0
     index = 0
 
@@ -12,7 +11,11 @@ def menu(topText, items): # Designed to take a list of options & return the inde
         clearScreen()
         # Print Top Text & Box
         printTopLine()
-        printMiddleLine(topText)
+        printMiddleLine("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄")
+        printMiddleLine("██░▄▄▄░█░▄▄░█░██░██▄██▄▄░██")
+        printMiddleLine("██▄▄▄▀▀█░▀▀░█░██░██░▄█▀▄███")
+        printMiddleLine("██░▀▀▀░████░██▄▄▄█▄▄▄█▄▄▄██")
+        printMiddleLine("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀")
         print("╞" + ("═" * terminalWidth()) + "╡")
 
         # Print the items
@@ -47,6 +50,7 @@ def menu(topText, items): # Designed to take a list of options & return the inde
         elif action in ["LEFT", "A"]:
             if index <= 15: # if on first page, loop to last page
                 index = len(items) - 15
+                if index < 0: index = 0
             else:
                 index -= 15
         # Go to a later page

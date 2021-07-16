@@ -8,7 +8,7 @@ import squizData
 from squizUI import clearScreen, printBotLine, printMiddleLine, printTopLine, terminalHeight, terminalWidth, getChar
 
 while True:
-    userChoice = squizMenu.menu("Main Menu", ["Single Player","Multiplayer","Exit"])
+    userChoice = squizMenu.mainMenu(["Single Player","Multiplayer","Exit"])
     if userChoice == 0: 
         squizQuiz.spQuiz(squizData.getQuestions("template"))
     elif userChoice == 1:
