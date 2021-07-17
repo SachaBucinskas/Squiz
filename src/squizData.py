@@ -13,7 +13,7 @@ def getQuestions(quizFile):
             tempFile.close()
         return(questionsData)
     except:
-        raise ValueError(quizFile + ".json does not exist inside Data/Quizes.")
+        raise ValueError(quizFile + " does not exist inside Data/Quizes.")
 
 def getListOfQuizes():
     try:

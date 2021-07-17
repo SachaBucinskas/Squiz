@@ -5,6 +5,9 @@ import getch
 import os
 import squizData
 import squizScoring
+import sys
+from textwrap import wrap
+from time import sleep
 
 def clearScreen():
     # Windows
@@ -30,6 +33,16 @@ def printTopLine():
 
 def printBotLine():
     print("└" + ("─"*terminalWidth()) + "┘")
+
+def slowPrint(text):
+    text = wrap(text, terminalWidth())
+    for line in text:
+        for character in line:
+            sys.stdout.write(character)
+            sys.stdout.flush()
+            if character != " ":
+                sleep(.05)
+        print("")
 
 def getChar():
     userInput = getch.getch()
