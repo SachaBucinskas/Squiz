@@ -16,9 +16,9 @@
         "answer": "2"
         },
         {
-        "question":"Which one of these Australian laws isn't real?",
-        "responses": ["Freedom of Speech","Its an offence to drive a dog or goat harnessed or attached to a vehicle in a public place.","Bars are required to stable, water and feed the horses of their patrons","In Victoria, it is illegal to change a light bulb unless you are a qualified electrician"],
-        "answer": "0"
+        "question":"Which State/Territory has the city of Canberra?",
+        "responses": ["Western Australia","Queensland","Northern Territory","Australian Capital Territory"],
+        "answer": "3"
         }
 ]
 }

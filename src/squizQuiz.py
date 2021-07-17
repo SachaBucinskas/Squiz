@@ -60,6 +60,8 @@ def spQuiz(questionsArg):
                 printMiddleLine("↓ Wrong! Bad Luck! ↓")
                 printMiddleLine("Score: " + str(score))
                 printMiddleLine("")
+                printMiddleLine("Correct Answer: " + questionData["responses"][int(questionData["answer"])])
+                printMiddleLine("")
                 printMiddleLine("Press any key to Continue")
                 printBotLine()
                 getChar()
@@ -160,7 +162,9 @@ def mpQuiz(questionsArg):
                     playerTwoScore -= points
                     printMiddleLine("")
                     printMiddleLine("P1 Score: " + str(playerOneScore))
-                    
+
+                printMiddleLine("")
+                printMiddleLine("Correct Answer: " + questionData["responses"][int(questionData["answer"])])
                 printMiddleLine("")
                 printMiddleLine("Press any key to Continue")
                 printBotLine()
