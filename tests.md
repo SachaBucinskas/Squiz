@@ -51,3 +51,65 @@ In this test, Player 2 won with 1000 points (as shown by their correct answer & 
 ![Bugged Multiplayer End Summary](./img/tests/multiplayerSummaryShowingWrongScore.png)
 This was due to some copied code where the playerOneScore variable remained in the summary where playerTwoScore should have been
 ![Fixed Multiplayer End Summary](./img/tests/multiplayerSummaryFixed.png)
+
+# Getch / getChart Test
+
+This function is frequently used to get instantaneous input from the user. To ensure keys are registering as you expect them, you can test if fairly easily. As long as you are in the src directory you can do the following to test it within the Python Interpretter
+
+    python3
+    >>> from squizUI import getChar
+    >>> while True:
+    ...     getChar()
+
+This will create a loop displaying whatever getChar thinks you hit on the keyboard. Some keys simply don't work as limitations of getch, such as Function keys like F1-F12, but most keys should work.
+
+Example run
+![getChar test run in the Python Interpretter](./img/tests/getCharTest.png))
+Expected output (Hitting every key I expect it to support)
+
+    'Q'
+    'W'
+    'E'
+    'R'
+    'T'
+    'Y'
+    'U'
+    'I'
+    'O'
+    'P'
+    '['
+    ']'
+    '\\'
+    'A'
+    'S'
+    'D'
+    'F'
+    'G'
+    'H'
+    'J'
+    'K'
+    'L'
+    ';'
+    "'"
+    'ENTER'
+    'Z'
+    'X'
+    'C'
+    'V'
+    'B'
+    'N'
+    'M'
+    ','
+    '.'
+    '/'
+    'SPACE'
+    'INS'
+    'HOME'
+    'PGUP'
+    'DEL'
+    'END'
+    'PGDN'
+    'UP'
+    'DOWN'
+    'LEFT'
+    'RIGHT'

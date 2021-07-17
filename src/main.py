@@ -53,10 +53,10 @@ if len(sys.argv) >1:
 try:
     while True:
         if userChoice == 0:
-            userChoice = squizMenu.pagedMenu("Select a Quiz", squizData.getListOfQuizes(),"") 
+            userChoice = squizMenu.pagedMenu("Select a Quiz", squizData.getListOfQuizes()) 
             squizQuiz.spQuiz(squizData.getQuestions(squizData.getListOfQuizes()[userChoice]))
         elif userChoice == 1:
-            userChoice = squizMenu.pagedMenu("Select a Quiz", squizData.getListOfQuizes(),"") 
+            userChoice = squizMenu.pagedMenu("Select a Quiz", squizData.getListOfQuizes()) 
             squizQuiz.mpQuiz(squizData.getQuestions(squizData.getListOfQuizes()[userChoice]))
         elif userChoice == 2: 
             sys.exit()

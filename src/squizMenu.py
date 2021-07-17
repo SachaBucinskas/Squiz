@@ -58,11 +58,10 @@ def menu(topText, items, bottomText): # Designed to take a list of options & ret
         elif action in ["ENTER"]:
             return(choice) # Returns the index of the choice in the items list
 
-def pagedMenu(topText, items, bottomText): # Designed to take a list of options & return the index of the option chosen
+def pagedMenu(topText, items): # Designed to take a list of options & return the index of the option chosen
 
     index = 0
     pageLength = 10
-    bottomText = "Placeholder"
     while True:
         userAction = menu(topText, items[index:index+pageLength], "Items: ("+str(index+1) +"-" + str(index+pageLength)+ ")")
         # Go to an earlier page
