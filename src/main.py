@@ -11,12 +11,12 @@ from squizUI import clearScreen, printBotLine, printMiddleLine, printTopLine, te
 userChoice = ""
 
 
-if len(sys.argv)>2:
+if len(sys.argv) >1:
     if sys.argv[1] == "--help":
         print("squiz " + __version__ + " (python3)")
         print("Usage: python main.py [options]")
         print("\nSquiz is a command line quiz program made in Python 3 supporting custom quiz files & local Multiplayer!")
-        print("""\nAvailable Arguements:
+        print("""\nAvailable Arguments:
         --help - Prints out this message with help on how to use the program
         -sp - Allows you to choose & play a quiz without going through the main menu or quiz selector
         -mp - Allows you to choose & play a quiz in Multiplayer without going through the main menu or quiz selector""")

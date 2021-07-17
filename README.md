@@ -29,3 +29,22 @@ Squiz tries to rely on the standard library as much as possible, with the except
 or
 
     pip install getch 
+
+### Usage
+You can start Squiz using the provided Bash launcher by using the following command
+
+    ./script.sh
+
+Alternatively you can start Squiz using the main.py file within the src directory directly with this command
+
+    python3 main.py
+
+### Launch Arguments
+The following launch arguments are available:
+
+    --help - Prints out this message with help on how to use the program
+
+    -sp <quizFile.json> - Allows you to choose & play a quiz without going through the main menu or quiz selector. Opens <quizFile.json> from within data/quizes
+
+    -mp <quizFile.json> - Allows you to choose & play a quiz in Multiplayer without going through the main menu or quiz selector. Opens <quizFile.json> from within data/quizes
+        
