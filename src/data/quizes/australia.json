@@ -19,6 +19,11 @@
         "question":"Which State/Territory has the city of Canberra?",
         "responses": ["Western Australia","Queensland","Northern Territory","Australian Capital Territory"],
         "answer": "3"
+        },
+        {
+        "question":"Who has won the most State of Origins?",
+        "responses": ["Queensland","New South Whales"],
+        "answer": "0"
         }
 ]
 }
