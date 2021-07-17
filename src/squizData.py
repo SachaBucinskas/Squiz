@@ -14,8 +14,3 @@ def getQuestions(quizFile):
         return(questionsData)
     except:
         raise ValueError(quizFile + ".json does not exist inside Data/Quizes.")
-
-#for i in questionData:
-#    print(i["question"])
-#    print(i["responses"])
-#    print(i["answer"])

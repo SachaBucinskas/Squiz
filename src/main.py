@@ -12,6 +12,6 @@ while True:
     if userChoice == 0: 
         squizQuiz.spQuiz(squizData.getQuestions("template"))
     elif userChoice == 1:
-        print("Multiplayer Coming soon!")
+        squizQuiz.mpQuiz(squizData.getQuestions("template"))
     elif userChoice == 2: 
         exit()
