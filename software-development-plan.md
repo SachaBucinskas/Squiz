@@ -86,4 +86,10 @@ Hitting exit in the Menu, well, exits immediately
 
 ![pagedMenu Function Flowchart](./img/flowcharts/pagedMenu.png)
 
-### Quiz
+### SP Quiz
+
+![SP Quiz Flowchart](./img/flowcharts/spQuiz.png)
+
+### MP Quiz
+
+![MP Quiz Flowchart](./img/flowcharts/mpQuiz.png)
