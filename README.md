@@ -4,6 +4,8 @@
 
 This is a fairly simple quiz game made for a Terminal/CLI interface made in Python 3. It reads quizes from external json files making additional quizes easy to add. Supports local Multiplayer
 
+[Github Repo](https://github.com/SachaBucinskas/Squiz)
+
 ## Instructions and Help
 
 ### System Requirements
