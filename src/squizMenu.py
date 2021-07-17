@@ -3,9 +3,8 @@
 
 from squizUI import clearScreen, printBotLine, printMiddleLine, printTopLine, terminalHeight, terminalWidth, getChar
 
-def mainMenu(items): # Designed to take a list of options & return the index of the option chosen
+def menu(topText, items, bottomText): # Designed to take a list of options & return the index of the option chosen
     choice = 0
-    index = 0
 
     while True:
         clearScreen()
@@ -16,6 +15,7 @@ def mainMenu(items): # Designed to take a list of options & return the index of 
         printMiddleLine("██▄▄▄▀▀█░▀▀░█░██░██░▄█▀▄███")
         printMiddleLine("██░▀▀▀░████░██▄▄▄█▄▄▄█▄▄▄██")
         printMiddleLine("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀")
+        printMiddleLine(str(topText))
         print("╞" + ("═" * terminalWidth()) + "╡")
 
         # Print the items
@@ -27,8 +27,12 @@ def mainMenu(items): # Designed to take a list of options & return the index of 
         
         # Print controls
         print("╞" + ("═" * terminalWidth()) + "╡")
-        printMiddleLine(str(index + choice))
-        printMiddleLine("")
+        printMiddleLine(str(bottomText))
+        print("╞" + ("═" * terminalWidth()) + "╡")
+        printMiddleLine("--Controls--")
+        printMiddleLine("[W] or [↑] Move Selection Up  [S] or [↓] Move Selection Down")
+        printMiddleLine("[A] or [←] Earlier Page  [D] or [→] Later Page")
+        printMiddleLine("[Enter] Chooses your Selection")
         printBotLine()
 
         # Depending on key pressed, move arrow or select option
@@ -45,19 +49,37 @@ def mainMenu(items): # Designed to take a list of options & return the index of 
                 choice = 0
             else:
                 choice += 1 # Otherwise, move down
-
         # Go to an earlier page
         elif action in ["LEFT", "A"]:
-            if index <= 15: # if on first page, loop to last page
-                index = len(items) - 15
-                if index < 0: index = 0
-            else:
-                index -= 15
+            return("LEFT")
         # Go to a later page
         elif action in ["RIGHT","D"]:
-            if index >= len(items) - 16: # if on last page, go to first page
+            return("RIGHT")
+        elif action in ["ENTER"]:
+            return(choice) # Returns the index of the choice in the items list
+
+def pagedMenu(topText, items, bottomText): # Designed to take a list of options & return the index of the option chosen
+
+    index = 0
+    pageLength = 10
+    bottomText = "Placeholder"
+    while True:
+        userAction = menu(topText, items[index:index+pageLength], "Items: ("+str(index+1) +"-" + str(index+pageLength)+ ")")
+        # Go to an earlier page
+        if userAction in ["LEFT","A"]:
+            if index < pageLength: # If on first page, loop to last page
+                index = len(items) - pageLength
+                if index < 0:
+                    index = 0
+            else:
+                index -= pageLength
+        # Go to a later page
+        elif userAction in ["RIGHT","D"]:
+            if index >= len(items) - pageLength + 1: # If on last page, loop to first
                 index = 0
             else:
-                index += 15
-        elif action in ["ENTER"]:
-            return(index + choice) # Returns the index of the choice in the items list
+                index += pageLength
+                if index > (len(items)):
+                    index = index - pageLength
+        else:
+            return(index + userAction)

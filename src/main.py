@@ -4,14 +4,16 @@
 import squizMenu
 import squizQuiz
 import squizData
+import sys
 
 from squizUI import clearScreen, printBotLine, printMiddleLine, printTopLine, terminalHeight, terminalWidth, getChar
 
 while True:
-    userChoice = squizMenu.mainMenu(["Single Player","Multiplayer","Exit"])
-    if userChoice == 0: 
-        squizQuiz.spQuiz(squizData.getQuestions("template"))
+    userChoice = squizMenu.menu("Main Menu",["Single Player","Multiplayer","Exit",],"")
+    if userChoice == 0:
+        userChoice = squizMenu.pagedMenu("Select a Quiz", squizData.getListOfQuizes(),"") 
+        squizQuiz.spQuiz(squizData.getQuestions(squizData.getListOfQuizes()[userChoice]))
     elif userChoice == 1:
         squizQuiz.mpQuiz(squizData.getQuestions("template"))
     elif userChoice == 2: 
-        exit()
+        sys.exit()
