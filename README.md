@@ -28,4 +28,4 @@ Squiz tries to rely on the standard library as much as possible, with the except
 
 or
 
-    pip install getch
+    pip install getch 
