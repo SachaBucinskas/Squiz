@@ -1,0 +1,24 @@
+{
+    "questions":[
+        { 
+        "question":"Which City is known as Australia's Culture Capital?",
+        "responses": ["Brisbane","Canberra","Sydney","Melbourne"],
+        "answer": "3"
+        },
+        {
+        "question":"Which State/Territory has the highest life expectancy?",
+        "responses": ["Australian Capital Territory","New South Whales","Western Australia","Victoria"],
+        "answer": "0"
+        },
+        {
+        "question":"How many stars are there on the Australian flag?",
+        "responses": ["Five","Four","Six","Seven"],
+        "answer": "2"
+        },
+        {
+        "question":"Which one of these Australian laws isn't real?",
+        "responses": ["Freedom of Speech","Its an offence to drive a dog or goat harnessed or attached to a vehicle in a public place.","Bars are required to stable, water and feed the horses of their patrons","In Victoria, it is illegal to change a light bulb unless you are a qualified electrician"],
+        "answer": "0"
+        }
+]
+}
