@@ -12,6 +12,9 @@ def getQuestions(quizFile):
             questionsData = json.load(tempFile)["questions"]
             tempFile.close()
         return(questionsData)
+    except KeyboardInterrupt:
+        print("Hate to see you leave so soon! Take care!")
+        sys.exit()
     except:
         raise ValueError(quizFile + " does not exist inside Data/Quizes.")
 
