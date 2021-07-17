@@ -9,6 +9,26 @@
         "question":"You having a good time?",
         "responses": ["This is the best!","How is this helpful?","This is terrible!","Not really"],
         "answer": "0"
+        },
+        {
+        "question":"What goes into the \"questions\" field in the quiz.json files?",
+        "responses": ["The list of questions with responses & the correct answers included","Something else","The question text","My graphics driver"],
+        "answer": "0"
+        },
+        {
+        "question":"What goes into the \"question\" field in questions list in the quiz.json files?",
+        "responses": ["The list of questions with responses & the correct answers included","Something else","The question text","My graphics driver"],
+        "answer": "2"
+        },
+        {
+        "question":"What goes into the \"responses\" field in questions list in the quiz.json files?",
+        "responses": ["Letters you've received","The available options for the question","Leaderboard Information","Something smart"],
+        "answer": "1"
+        },
+        {
+        "question":"What goes into the \"answer\" field in questions list in the quiz.json files?",
+        "responses": ["The question text","Your favorite pet's age","The correct answer, with 0 being the first option and 3 being the 4th & last option","Your credit card information"],
+        "answer": "2"
         }
-    ]
+]
 }
