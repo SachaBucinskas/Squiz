@@ -14,7 +14,7 @@ def getQuestions(quizFile):
         return(questionsData)
     except KeyboardInterrupt:
         print("Hate to see you leave so soon! Take care!")
-        sys.exit()
+        exit()
     except:
         raise ValueError(quizFile + " does not exist inside Data/Quizes.")
 

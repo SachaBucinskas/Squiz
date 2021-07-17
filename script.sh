@@ -4,16 +4,15 @@ if python3 -c "import getch" &> /dev/null; then
     echo "Found getch"
 else
     echo "ERROR: Could not find getch" 
-    echo ""
-    dialog --title "Install Module" \
-    --backtitle "Squiz Startup Script"
-    --yesno "Would you like to install getch with pip now? Or do you want to exit?"
-    response=$?
-        case $response in
-        0) pip3 install getch;; # Yes
-        1) exit 0;; # No
-        255) exit 0;; # Hit Escape
-    esac 
+    echo "Would you like to install getch with pip now?"
+    echo "   -If you don't, you'll have to exit"
+    read -p "(Y/N): " installGetch
+    if grep -q "$installGetch" <<< "yY"; then
+        pip3 install getch
+    else
+        echo "Exitting now. Please reconsider installing getch! Have a nice day!"
+        exit 0
+    fi
 fi
 cd src
 python3 ./main.py
